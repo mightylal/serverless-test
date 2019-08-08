@@ -1,13 +1,15 @@
-version: 0.1
+version: 2.0
 phases:
   install:
     runtime-versions:
       nodejs: 10
     commands:
       - npm install
+      - npm install -g mocha
+      - npm install -g serverless
   build:
     commands:
-      - ./node_modules/.bin/serverless deploy --stage cicd | tee deploy.out
+      - serverless deploy --stage cicd | tee deploy.out
   post_build:
     commands:
       - ./test.sh
