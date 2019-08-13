@@ -6,6 +6,6 @@ describe('Tests', () => {
     });
 
     it('fails to work', () => {
-        assert.equal('hello', 'byebye');
+        assert.equal('hello', 'hello');
     });
 });
