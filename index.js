@@ -7,7 +7,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/what', (req, res) => {
-    res.send('What the fudge hhahh asdf alksdjf lkajsdf lkjadsf');
+    res.send('What the fudge hhahh asdf alksdjf lkajsdf lkjadsf this is an additional route');
 });
 
 module.exports.handler = serverless(app);
