@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e23941c1-6c99-43ff-8116-8248c0aef829" name="Default Changelist" comment="" />
+    <list default="true" id="e23941c1-6c99-43ff-8116-8248c0aef829" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.serverless/cloudformation-template-update-stack.json" beforeDir="false" afterPath="$PROJECT_DIR$/.serverless/cloudformation-template-update-stack.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.serverless/my-express-application.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.serverless/my-express-application.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.serverless/serverless-state.json" beforeDir="false" afterPath="$PROJECT_DIR$/.serverless/serverless-state.json" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +72,7 @@
       <option name="presentableId" value="Default" />
       <updated>1565226740953</updated>
       <workItem from="1565226746582" duration="3686000" />
+      <workItem from="1565663098927" duration="172000" />
     </task>
     <servers />
   </component>
@@ -79,7 +84,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
