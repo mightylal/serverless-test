@@ -12,5 +12,6 @@ functions:
   app:
     handler: index.handler
     events:
-      - http: ANY /
-      - http: 'ANY {proxy+}'
+      - http:
+          path: graphql
+          method: any

@@ -119,7 +119,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/my-express-application/dev/1565663423930-2019-08-13T02:30:23.930Z/my-express-application.zip"
+                "S3Key": "serverless/my-express-application/dev/1568863818847-2019-09-19T03:30:18.847Z/my-express-application.zip"
               },
               "FunctionName": "my-express-application-dev-app",
               "Handler": "index.handler",
@@ -138,14 +138,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "AppLambdaVersionXaB4uWMKTgWXv1BYo9fS7OI8c5VQgdAephFFxktEGw": {
+          "AppLambdaVersionQdxnpQhXm2Lm7TxOqK92hmlprLNs4sYioFir4Jik": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "AppLambdaFunction"
               },
-              "CodeSha256": "qjeZXrdtgaOYQPJ8QfbOrlgY+o40bifJ+20WWPHb8eo="
+              "CodeSha256": "3YyBNT+vyNNeTBaWZoAoV//016eGfplEGi3tURNrFYc="
             }
           },
           "ApiGatewayRestApi": {
@@ -159,7 +159,7 @@
               }
             }
           },
-          "ApiGatewayResourceProxyVar": {
+          "ApiGatewayResourceGraphql": {
             "Type": "AWS::ApiGateway::Resource",
             "Properties": {
               "ParentId": {
@@ -168,22 +168,19 @@
                   "RootResourceId"
                 ]
               },
-              "PathPart": "{proxy+}",
+              "PathPart": "graphql",
               "RestApiId": {
                 "Ref": "ApiGatewayRestApi"
               }
             }
           },
-          "ApiGatewayMethodAny": {
+          "ApiGatewayMethodGraphqlAny": {
             "Type": "AWS::ApiGateway::Method",
             "Properties": {
               "HttpMethod": "ANY",
               "RequestParameters": {},
               "ResourceId": {
-                "Fn::GetAtt": [
-                  "ApiGatewayRestApi",
-                  "RootResourceId"
-                ]
+                "Ref": "ApiGatewayResourceGraphql"
               },
               "RestApiId": {
                 "Ref": "ApiGatewayRestApi"
@@ -220,50 +217,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayMethodProxyVarAny": {
-            "Type": "AWS::ApiGateway::Method",
-            "Properties": {
-              "HttpMethod": "ANY",
-              "RequestParameters": {},
-              "ResourceId": {
-                "Ref": "ApiGatewayResourceProxyVar"
-              },
-              "RestApiId": {
-                "Ref": "ApiGatewayRestApi"
-              },
-              "ApiKeyRequired": false,
-              "AuthorizationType": "NONE",
-              "Integration": {
-                "IntegrationHttpMethod": "POST",
-                "Type": "AWS_PROXY",
-                "Uri": {
-                  "Fn::Join": [
-                    "",
-                    [
-                      "arn:",
-                      {
-                        "Ref": "AWS::Partition"
-                      },
-                      ":apigateway:",
-                      {
-                        "Ref": "AWS::Region"
-                      },
-                      ":lambda:path/2015-03-31/functions/",
-                      {
-                        "Fn::GetAtt": [
-                          "AppLambdaFunction",
-                          "Arn"
-                        ]
-                      },
-                      "/invocations"
-                    ]
-                  ]
-                }
-              },
-              "MethodResponses": []
-            }
-          },
-          "ApiGatewayDeployment1565663415150": {
+          "ApiGatewayDeployment1568863813607": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -272,8 +226,7 @@
               "StageName": "dev"
             },
             "DependsOn": [
-              "ApiGatewayMethodAny",
-              "ApiGatewayMethodProxyVarAny"
+              "ApiGatewayMethodGraphqlAny"
             ]
           },
           "AppLambdaPermissionApiGateway": {
@@ -323,7 +276,7 @@
           "AppLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "AppLambdaVersionXaB4uWMKTgWXv1BYo9fS7OI8c5VQgdAephFFxktEGw"
+              "Ref": "AppLambdaVersionQdxnpQhXm2Lm7TxOqK92hmlprLNs4sYioFir4Jik"
             }
           },
           "ServiceEndpoint": {
@@ -386,10 +339,11 @@
         "handler": "index.handler",
         "events": [
           {
-            "http": "ANY /"
-          },
-          {
-            "http": "ANY {proxy+}"
+            "http": {
+              "path": "graphql",
+              "method": "any",
+              "integration": "AWS_PROXY"
+            }
           }
         ],
         "name": "my-express-application-dev-app",
@@ -405,7 +359,7 @@
     "artifact": "/Users/mac/sites/my-express-application/.serverless/my-express-application.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/my-express-application/dev/1565663423930-2019-08-13T02:30:23.930Z",
+    "artifactDirectoryName": "serverless/my-express-application/dev/1568863818847-2019-09-19T03:30:18.847Z",
     "artifact": "my-express-application.zip"
   }
 }
