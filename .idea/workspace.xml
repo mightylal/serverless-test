@@ -9,7 +9,6 @@
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverless.yml" beforeDir="false" afterPath="$PROJECT_DIR$/serverless.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +83,8 @@
       <workItem from="1568775924999" duration="180000" />
       <workItem from="1568776902361" duration="475000" />
       <workItem from="1568777462598" duration="185000" />
-      <workItem from="1568863033285" duration="703000" />
+      <workItem from="1568863033285" duration="794000" />
+      <workItem from="1569328270598" duration="3634000" />
     </task>
     <servers />
   </component>
