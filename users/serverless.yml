@@ -1,0 +1,11 @@
+service: my-express-application-users
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: dev
+  region: us-west-2
+
+functions:
+  users:
+    handler: index.handler
